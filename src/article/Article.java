@@ -8,7 +8,7 @@ public class Article {
   private String heading;
   private String body;
   private String author;
-  private String longestWord = " ";
+
 
   // Lav test-kode der sætter alle tre attributter. Så kan være settere i stedet for konstruktør!
   /*public Article(String heading, String body, String author) {
@@ -47,12 +47,27 @@ public class Article {
   // Returnerer det længste ord (uden tegn!) fra body
   public String getLongestWord() {
 
-    String[] split = body.split(" ");
+    String[] words = body.split(" ");
+    String longestWord = "";
 
-    for (String s : split) {
+    for (String word : words) {
 
-      if (s.length() > longestWord.length()) {
-        longestWord = s;
+      boolean isSymbol = false;
+
+      for (int i = 0; i < word.length(); i++) {
+
+        // ? = logic statement før spørgsmåltegnet som returnerer enten true eller false
+        //Hvis statementet returnerer true sker det "før kolonet", hvis det er false sker det "efter kolonet"
+
+        if (!Character.isLetter(word.charAt(i))){
+          longestWord = i > longestWord.length() ? word.substring(0,i) : longestWord;
+          isSymbol = true;
+          break;
+        }
+      }
+
+      if (!isSymbol) {
+        longestWord = word.length() > longestWord.length() ? word : longestWord;
       }
     }
       return longestWord;
