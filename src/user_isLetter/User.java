@@ -41,11 +41,11 @@ public class User {
     Random random = new Random();
 
     if (userIdArray.length > 2){
-      String loLetters = userIdArray[0].substring(0,2);
+      String toLetters = userIdArray[0].substring(0,2);
       String nextLetters = userIdArray[2].substring(0,2);
       int randomNumber = random.nextInt(0000, 9999);
 
-      userID = loLetters + nextLetters + randomNumber;
+      userID = toLetters + nextLetters + randomNumber;
       return userID;
 
     } else{
