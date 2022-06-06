@@ -52,7 +52,7 @@ public class User {
       String tobogstaver = userIdArray[0].substring(0,2);
       String næsteToBogstaverFraEfternavn = userIdArray[1].substring(0,2);
 
-      int randomNumber = random.nextInt(0000, 9999);
+      int randomNumber = random.nextInt(1000, 9999);
       userID = tobogstaver + næsteToBogstaverFraEfternavn + randomNumber;
       return userID;
     }
@@ -65,8 +65,11 @@ public class User {
     User user2 = new User("Marcus Sebastian Holje", "abcd1234");
     //System.out.println(user.validUserId());
 
-    System.out.println(user.createUserID());
-    System.out.println(user2.createUserID());
+    for (int i = 0; i < 100 ; i++) {
+      System.out.println(user.createUserID());
+    }
+
+
 
   }
 
