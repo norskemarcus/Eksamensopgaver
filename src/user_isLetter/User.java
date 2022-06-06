@@ -1,5 +1,7 @@
 package user_isLetter;
 
+import java.util.Random;
+
 public class User {
   private String fullName;
   private String userID;
@@ -33,10 +35,39 @@ public class User {
     return valid;
   }
 
+  public String createUserID(){
+
+    String[] userIdArray = fullName.split(" ");
+    Random random = new Random();
+
+    if (userIdArray.length > 2){
+      String loLetters = userIdArray[0].substring(0,2);
+      String nextLetters = userIdArray[2].substring(0,2);
+      int randomNumber = random.nextInt(0000, 9999);
+
+      userID = loLetters + nextLetters + randomNumber;
+      return userID;
+
+    } else{
+      String tobogstaver = userIdArray[0].substring(0,2);
+      String næsteToBogstaverFraEfternavn = userIdArray[1].substring(0,2);
+
+      int randomNumber = random.nextInt(0000, 9999);
+      userID = tobogstaver + næsteToBogstaverFraEfternavn + randomNumber;
+      return userID;
+    }
+  }
+
 
   public static void main(String[] args) {
+
     User user = new User("Eva Møller", "abcd2345");
-    System.out.println(user.validUserId());
+    User user2 = new User("Marcus Sebastian Holje", "abcd1234");
+    //System.out.println(user.validUserId());
+
+    System.out.println(user.createUserID());
+    System.out.println(user2.createUserID());
+
   }
 
 }

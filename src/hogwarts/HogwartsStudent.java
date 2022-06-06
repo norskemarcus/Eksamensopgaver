@@ -9,7 +9,7 @@ public class HogwartsStudent implements Comparable<HogwartsStudent> {
   private String lastName;
   private String house;
 
-  public HogwartsStudent(String firstName, String lastName, String house) throws Exception {
+  public HogwartsStudent(String firstName, String lastName, String house) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.house = house;

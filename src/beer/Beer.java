@@ -8,7 +8,7 @@ public class Beer {
   private double alcoholPercentage;
   private double price;
 
-  public Beer(String name, double alcoholPercentage,double price) throws Exception {
+  public Beer(String name, double alcoholPercentage,double price) {
     this.name = name;
     this.alcoholPercentage = alcoholPercentage;
     this.price = price;
@@ -23,10 +23,10 @@ public class Beer {
 
   }
 
-  public void setPrice(double price) throws Exception{
+  public void setPrice(double price) throws NegativeNumberException{
     if(price > 0){
       this.price = price;
-    } else throw new Exception("Prisen kan ikke være negativ");
+    } else throw new NegativeNumberException("Prisen kan ikke være negativ");
   }
 
   public double getPrice() {
@@ -51,7 +51,6 @@ public class Beer {
       double priceAverage = 0;
 
       for (int i = 0; i < beers.size(); i++) {
-        beers.get(i);
         priceAverage += beers.get(i).getPrice();
       }
 
@@ -60,8 +59,9 @@ public class Beer {
 
       System.out.println(beer);
 
-    } catch (Exception e){
+    } catch (IllegalArgumentException | NegativeNumberException e){
       System.err.println(e.getMessage());
+
     }
   }
 

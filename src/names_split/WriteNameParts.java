@@ -1,7 +1,7 @@
 package names_split;
 
 // Name-parts - II - metoden writeNameParts der man bruger substring og indexOf
-// Brug heller kun split - se NamesP
+// Brug heller kun split - se Names
 
 public class WriteNameParts {
 
