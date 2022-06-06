@@ -1,52 +1,52 @@
 package names_split;
 
-
 public class Names {
 
   private String firstName;
   private String middleName;
   private String lastName;
 
+  public Names(String fullName) {
 
-  public Names(String fullName){
-    String[] names = fullName.split(" "); // Kan fx bruge semikolon eller /
+    String[] names = fullName.split(" ");
 
-    if(names.length > 2){
-      firstName = names[0].substring(0,1).toUpperCase() + names[0].substring(1).toLowerCase();
-      middleName = names[1].substring(0,1).toUpperCase() + names[0].substring(1).toLowerCase();;
-      lastName = names[2].substring(0,1).toUpperCase() + names[0].substring(1).toLowerCase();;
-    } else{
-      firstName = names[0].substring(0,1).toUpperCase() + names[0].substring(1).toLowerCase();;
-      lastName = names[1].substring(0,1).toUpperCase() + names[0].substring(1).toLowerCase();;
+    if (names.length > 2) {
+      firstName = names[0];
+      middleName = names[1];
+      lastName = names[2];
+    } else {
+      firstName = names[0];
+      lastName = names[1];
     }
-    //System.out.println(firstName + " " + middleName + " " + lastName);
-
   }
 
-  @Override
   public String toString() {
-    StringBuilder s = new StringBuilder();
-    s.append(firstName).append(" ");
 
-    if (middleName != null){
-      s.append(middleName).append(" ");
+    StringBuilder sb = new StringBuilder();
+
+    sb.append(firstName).append(" ");
+
+    if (middleName != null) {
+      sb.append(middleName).append(" ");
     }
 
-    s.append(lastName).append(" ");
+    sb.append(lastName).append(" ");
 
-    return s.toString();
+    return sb.toString();
   }
 
 
+  public static void main (String[] args){
 
-  public static void main(String[] args) {
+    Names name = new Names("Marcus Holje");
+    Names name2 = new Names("Marcus Sebastian Holje");
 
-    Names marcus = new Names("marcus sebastian holje");
-    Names tommy = new Names("Tommy jensen");
 
-    System.out.println(marcus);
-    System.out.println(tommy);
+    System.out.println(name);
+    System.out.println(name2);
+
+
   }
+
 
 }
-
