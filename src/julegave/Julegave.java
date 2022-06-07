@@ -1,15 +1,15 @@
 package julegave;
 
 import java.util.Random;
-
+// Øvelse 13 (6)
 public class Julegave {
 
   private boolean isSoft;
   private boolean isRectangular;
   private boolean doesRattle;
+  private  Random random = new Random();
 
   public Julegave() {
-    Random random = new Random();
     this.isSoft = random.nextBoolean();
     this.isRectangular = random.nextBoolean();;
     this.doesRattle = random.nextBoolean();;
@@ -28,11 +28,9 @@ public class Julegave {
 
   @Override
   public String toString() {
-    return "Julegave{" +
-        "isSoft=" + isSoft +
-        ", isRectangular=" + isRectangular +
-        ", doesRattle=" + doesRattle +
-        '}';
+    return "Er julegaven myk? " + isSoft +
+        ", er den firkantet? " + isRectangular +
+        ", og kan den rasle? " + doesRattle;
   }
 
 
@@ -40,7 +38,7 @@ public class Julegave {
 
   public static void main(String[] args) {
     Julegave julegave = new Julegave();
-    System.out.println(julegave);
+    //System.out.println(julegave);
 
     julegave.couldBeLego();
     julegave.printCouldBeLego();

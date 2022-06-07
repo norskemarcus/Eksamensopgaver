@@ -43,17 +43,27 @@ public class User {
     if (userIdArray.length > 2){
       String toLetters = userIdArray[0].substring(0,2);
       String nextLetters = userIdArray[2].substring(0,2);
-      int randomNumber = random.nextInt(0000, 9999);
 
-      userID = toLetters + nextLetters + randomNumber;
+      int random1 = random.nextInt(0,9);
+      int random2 = random.nextInt(0,9);
+      int random3 = random.nextInt(0,9);
+      int random4 = random.nextInt(0,9);
+
+
+      userID = toLetters + nextLetters + random1 + random2 + random3 + random4;
       return userID;
 
     } else{
-      String tobogstaver = userIdArray[0].substring(0,2);
-      String næsteToBogstaverFraEfternavn = userIdArray[1].substring(0,2);
+      String toLetters = userIdArray[0].substring(0,2);
+      String nextLetters = userIdArray[1].substring(0,2);
 
-      int randomNumber = random.nextInt(1000, 9999);
-      userID = tobogstaver + næsteToBogstaverFraEfternavn + randomNumber;
+      int random1 = random.nextInt(0,9);
+      int random2 = random.nextInt(0,9);
+      int random3 = random.nextInt(0,9);
+      int random4 = random.nextInt(0,9);
+
+
+      userID = toLetters + nextLetters + random1 + random2 + random3 + random4;
       return userID;
     }
   }
@@ -63,7 +73,7 @@ public class User {
 
     User user = new User("Eva Møller", "abcd2345");
     User user2 = new User("Marcus Sebastian Holje", "abcd1234");
-    //System.out.println(user.validUserId());
+    System.out.println(user.validUserId());
 
     for (int i = 0; i < 100 ; i++) {
       System.out.println(user.createUserID());

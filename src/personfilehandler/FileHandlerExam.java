@@ -12,7 +12,6 @@ public class FileHandlerExam {
 
   }
 
-
   public ArrayList<Person> loadFromFile() throws FileNotFoundException {
 
     ArrayList<Person> persons = new ArrayList<>();

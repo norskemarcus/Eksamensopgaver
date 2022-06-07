@@ -2,21 +2,37 @@ package user_users_static;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class FileHandlerUserId {
 
 
-  public int loadUserId(){
+  public int loadUserId()  {
 
-    int userId = 1;
+    int userId = 0;
 
-    Scanner fileScanner = new Scanner("user_users_static/userId.txt");
+    try {
+      Scanner fileScanner = new Scanner(new File("userId.txt"));
 
-    userId = fileScanner.nextInt();
+      int number = fileScanner.nextInt();
+      userId = number;
 
+    } catch (FileNotFoundException fnfe) {
+      System.out.println("Fil ikke fundet");
+    }
     return userId;
   }
 
+  public void saveMemberNumberToFile(int userId) {
+
+    try {
+      PrintStream out = new PrintStream("userId.txt");
+      out.print(userId);
+
+    } catch (FileNotFoundException fnfe) {
+      System.out.println("Fil ikke fundet");
+    }
+  }
 
 }

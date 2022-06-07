@@ -11,19 +11,23 @@ public class User {
   private String userName;
   private int userId;
   private Role role;
-  private static int lastUsedUserid = 1;
+ // private static int lastUsedUserid = 1;
+  FileHandlerUserId fileHandlerUserId = new FileHandlerUserId();
 
-  public User(String userName, int userId, Role role){
+  public User(String userName, Role role){ //int userId,
     this.userName = userName;
-    this.userId = lastUsedUserid ++;
+    this.userId = fileHandlerUserId.loadUserId();
+    // this.userId = lastUsedUserid ++;
     this.role = role;
-
   }
 
   public Role getRole(){
     return role;
   }
 
+  public int getUserId() {
+    return userId;
+  }
 
   @Override
   public String toString() {

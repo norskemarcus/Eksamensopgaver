@@ -56,7 +56,7 @@ public class Article {
 
       for (int i = 0; i < word.length(); i++) {
 
-        // ? = logic statement før spørgsmåltegnet som returnerer enten true eller false
+        // ? = ternary operator: logic statement før spørgsmålstegnet som returnerer enten true eller false
         //Hvis statementet returnerer true sker det "før kolonet", hvis det er false sker det "efter kolonet"
 
         if (!Character.isLetter(word.charAt(i))){
@@ -74,7 +74,13 @@ public class Article {
     }
 
 
-
+/*
+if (i > longest.length()) {
+  longest = word.substring(0, i);
+} else {
+  longest = longest
+}
+ */
 
 
   // returnerer en liste af alle ord fra body
